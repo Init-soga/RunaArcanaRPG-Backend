@@ -14,19 +14,31 @@ export default class PersonagensController {
 
     const objetoPersonagem = request.all()
 
-    await Personagen.create(objetoPersonagem)
+    const personagem = await Personagen.create(objetoPersonagem)
 
-    return 'success'
+    return `O personagem ${personagem.nome} foi criado com sucesso no ID ${personagem.id}`
 
   }
 
-  // public async show({ }: HttpContextContract) { }
+  public async show({ params }: HttpContextContract) {
+    const personagem = await Personagen.findOrFail(params.id)
+
+    return personagem;
+  }
 
   // public async edit({ }: HttpContextContract) { }
 
   // public async update({ }: HttpContextContract) { }
 
-  // public async destroy({ }: HttpContextContract) { }
+  public async destroy({ params }: HttpContextContract) {
+
+    const personagem = await Personagen.findOrFail(params.id)
+
+    await personagem.delete();
+
+    return "Personagem deletado";
+
+  }
 }
 
 module.exports = PersonagensController

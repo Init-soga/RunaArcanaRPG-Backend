@@ -1,3 +1,5 @@
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.resource('/', 'PersonagensController')
+Route.resource('/personagens', 'PersonagensController')
+
+
