@@ -33,6 +33,12 @@ export default class Personagen extends BaseModel {
 
   @column()
   public frase: string
+
+  @column()
+  public imagem: string
+
+  @column()
+  public mesa: string
 }
 
 //nome titulo regiao classe campeosrelacionados manifestotitulo manifestocorpo 

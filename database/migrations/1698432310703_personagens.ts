@@ -17,6 +17,8 @@ export default class extends BaseSchema {
       table.text('relacionado1').notNullable()
       table.text('relacionado2').notNullable()
       table.text('relacionado3').notNullable()
+      table.text('imagem').notNullable()
+      table.enu('mesa', ['zefiros', 'fragmentos']).notNullable()
     })
   }
 
